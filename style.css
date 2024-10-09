@@ -1,0 +1,136 @@
+/* General reset and body styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Clean and modern font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Soft blue gradient */
+  color: #333; /* Dark text for contrast */
+}
+
+/* Stopwatch container */
+.stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stopwatch {
+  text-align: center;
+  background: #34495e; /* Deep blue-gray */
+  color: #ecf0f1; /* Light text */
+  padding: 30px;
+  border-radius: 15px; /* Rounded rectangle shape */
+  width: 320px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Deep shadow for effect */
+  animation: fadeIn 1s ease;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Time display */
+.display {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: #2ecc71; /* Soft green for contrast */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+/* Controls for buttons - rounded rectangles */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  background-color: #f39c12; /* Soft orange */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+button:hover {
+  background-color: #e67e22; /* Slightly darker orange on hover */
+  transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Lap times container */
+.laps {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.laps ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 150px;
+  overflow-y: auto; /* Scrollable lap list */
+}
+
+.laps ul li {
+  background-color: #3498db; /* Light blue for laps */
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px; /* Rounded corners */
+  color: white;
+  animation: slideIn 0.3s ease;
+}
+
+/* Slide-in animation for lap times */
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Make the site responsive */
+@media only screen and (max-width: 600px) {
+  .stopwatch {
+      width: 250px;
+  }
+
+  .display {
+      width: 160px;
+      font-size: 28px;
+  }
+
+  button {
+      width: 80px;
+      font-size: 12px;
+  }
+
+  .laps ul {
+      max-height: 100px;
+  }
+}
